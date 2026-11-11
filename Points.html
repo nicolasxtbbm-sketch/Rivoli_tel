@@ -37,7 +37,7 @@
             <div id="agenda-canvas" class="agenda-canvas"><div id="agenda-event-layer" class="agenda-event-layer"></div><div id="agenda-now-line" class="agenda-now-line hidden"><i></i></div></div>
           </div>
         </section>
-        <section class="card rolodex-card" id="widget-rolodex" aria-labelledby="rolodex-heading"><div class="section-heading"><h2 id="rolodex-heading">Rolodex</h2><button type="button" id="add-contact" class="text-button">＋ Ajouter un contact</button></div><div id="rolodex-list" class="rolodex-list"></div></section>
+        <section class="card rolodex-card" id="widget-rolodex" aria-labelledby="rolodex-heading"><div class="section-heading"><h2 id="rolodex-heading">Rolodex</h2><button type="button" id="add-contact" class="text-button">＋ Ajouter</button></div><div id="rolodex-list" class="rolodex-list"></div></section>
         </div>
         </div>
         <section class="card journal-card" id="widget-journal" aria-labelledby="journal-heading">
@@ -45,7 +45,7 @@
           <div class="journal-layout">
             <div class="journal-left-column">
               <section class="journal-goals"><div class="journal-subheading"><h3>Objectifs de la semaine</h3><span id="journal-goal-count">0 / 5</span></div><ul id="journal-goal-list" class="journal-goal-list"></ul><form id="journal-goal-form" class="journal-goal-form"><input id="journal-goal-input" type="text" maxlength="100" placeholder="Ajouter un objectif…" aria-label="Nouvel objectif hebdomadaire" required><button type="submit" aria-label="Ajouter l’objectif">＋</button></form></section>
-              <section class="journal-program" aria-labelledby="program-heading">
+              <section class="journal-program" id="widget-program" aria-labelledby="program-heading">
                 <div class="section-heading program-section-heading"><h2 id="program-heading">Ordre du jour</h2><div id="program-routines" class="program-routine-actions" aria-label="Valider une routine"></div><span class="count-pill" id="program-count">0</span></div>
                 <form id="program-form" class="program-form"><input id="program-title" type="text" maxlength="100" placeholder="À faire…" aria-label="Nouvelle tâche pour aujourd’hui" required><label class="program-points-label">Pts <input id="program-points" type="number" min="0" max="10" step="0.5" value="1" aria-label="Points de la tâche"></label><button class="primary-button" type="submit" aria-label="Ajouter à la liste">＋</button></form>
                 <div id="program-list" class="program-list"></div><p class="empty-state" id="program-empty">Rien de prévu aujourd’hui.</p>
