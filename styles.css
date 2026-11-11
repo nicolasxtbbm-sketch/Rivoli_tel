@@ -805,3 +805,9 @@ html.lite-mode #widget-journal>.section-heading{display:none!important}
   html.lite-mode main.custom-layout #widget-chart{height:300px!important;min-height:300px!important}
   html.lite-mode main.custom-layout #widget-agenda{display:flex!important;height:auto!important;min-height:0!important}
 }
+
+/* Chart bars and SVG averages share the same 14 equal-width columns. */
+.chart-card .week-chart{display:grid!important;grid-template-columns:repeat(14,minmax(0,1fr));column-gap:0!important;justify-content:stretch!important}
+.chart-card .bar-column{width:auto!important;max-width:none!important;min-width:0!important;height:100%;justify-self:stretch}
+.chart-card .bar-label{max-width:100%;overflow:hidden;text-overflow:clip}
+@media(max-width:480px){.chart-card .bar-label{font-size:8px!important;letter-spacing:0!important}}
