@@ -1,0 +1,12 @@
+{
+  "name": "Rivoli · Lite",
+  "short_name": "Rivoli Lite",
+  "description": "Calendrier, points, thunes et ordre du jour.",
+  "lang": "fr-FR",
+  "start_url": "./Points.html?lite=1",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f8",
+  "theme_color": "#315bd6",
+  "icons": [{"src":"en-avant-logo.png","sizes":"517x517","type":"image/png","purpose":"any"}]
+}

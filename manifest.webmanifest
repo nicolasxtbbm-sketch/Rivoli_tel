@@ -1,0 +1,12 @@
+{
+  "name": "Rivoli",
+  "short_name": "Rivoli",
+  "description": "Suivi du quotidien, de l’agenda et des objectifs.",
+  "lang": "fr-FR",
+  "start_url": "./Points.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f8",
+  "theme_color": "#315bd6",
+  "icons": [{"src":"en-avant-logo.png","sizes":"517x517","type":"image/png","purpose":"any"}]
+}
