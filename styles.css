@@ -783,3 +783,25 @@ html.lite-mode #task-calendar-links{display:none!important}
 html.lite-mode #widget-chart{height:300px!important;min-height:300px!important}
 html.lite-mode #widget-chart .week-chart{height:190px!important;min-height:190px!important;flex:none!important;--chart-plot-top:10px;--chart-plot-height:158px;overflow:hidden!important}
 @media(max-width:720px){html.lite-mode main.custom-layout #widget-chart{height:300px!important;min-height:300px!important}}
+
+/* Lite mobile: expose only the four Lite cards and never the Journal shell. */
+html.lite-mode #widget-journal>.section-heading{display:none!important}
+html.lite-mode #widget-agenda{display:flex!important}
+@media(max-width:800px){
+  html.lite-mode main.custom-layout{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important}
+  html.lite-mode main.custom-layout .layout-widget{grid-column:auto!important;grid-row:auto!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
+  html.lite-mode main.custom-layout #widget-chart{height:300px!important;min-height:300px!important}
+  html.lite-mode main.custom-layout #widget-agenda{height:auto!important;min-height:0!important}
+}
+
+/* Lite: hide the Journal title strip; metrics sit beside the wake time. */
+html.lite-mode #widget-journal>.section-heading{display:none!important}
+.wake-journal-note{display:flex!important;align-items:flex-start;gap:8px;min-width:0}
+.wake-journal-note time{position:static!important;flex:0 0 78px;min-width:78px!important;max-width:none!important;padding:0!important;line-height:1.42!important}
+.wake-journal-note .wake-journal-metrics{display:block;flex:1;min-width:0;padding:0 3px!important;white-space:nowrap;line-height:1.42}
+@media(max-width:800px){
+  html.lite-mode main.custom-layout{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important}
+  html.lite-mode main.custom-layout .layout-widget{grid-column:auto!important;grid-row:auto!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;overflow:visible!important}
+  html.lite-mode main.custom-layout #widget-chart{height:300px!important;min-height:300px!important}
+  html.lite-mode main.custom-layout #widget-agenda{display:flex!important;height:auto!important;min-height:0!important}
+}
