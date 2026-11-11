@@ -778,3 +778,8 @@ html.lite-mode #task-calendar-links{display:none!important}
   html.lite-mode #widget-chart .week-chart{gap:0;padding-left:0;padding-right:0}
   html.lite-mode #widget-chart .bar-label{font-size:9px;white-space:nowrap}
 }
+
+/* Keep the Lite chart plot and its date row inside the chart card. */
+html.lite-mode #widget-chart{height:300px!important;min-height:300px!important}
+html.lite-mode #widget-chart .week-chart{height:190px!important;min-height:190px!important;flex:none!important;--chart-plot-top:10px;--chart-plot-height:158px;overflow:hidden!important}
+@media(max-width:720px){html.lite-mode main.custom-layout #widget-chart{height:300px!important;min-height:300px!important}}
