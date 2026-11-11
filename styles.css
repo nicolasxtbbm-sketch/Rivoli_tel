@@ -767,3 +767,14 @@ html.lite-mode #widget-agenda .agenda-scroll{height:360px;min-height:360px;flex:
 html.lite-mode #widget-agenda .agenda-wake-line,html.lite-mode #widget-agenda #agenda-wake-summary{display:none!important}
 html.lite-mode .journal-program .program-wake-section{display:none!important}
 @media(max-width:720px){html.lite-mode .cover-banner .topbar{height:82px!important;padding:7px 12px!important}html.lite-mode #widget-agenda .agenda-scroll{height:340px;min-height:340px}}
+
+/* Lite layout stays readable on narrow phones even when a desktop layout is saved. */
+html.lite-mode #task-calendar-links{display:none!important}
+@media(max-width:720px){
+  html.lite-mode main.custom-layout{display:flex!important;flex-direction:column!important;gap:10px!important}
+  html.lite-mode main.custom-layout .layout-widget{position:relative!important;grid-column:auto!important;grid-row:auto!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;overflow:visible!important;flex:none!important}
+  html.lite-mode main.custom-layout #widget-chart{height:270px!important;min-height:270px!important}
+  html.lite-mode main.custom-layout #widget-agenda{height:auto!important;min-height:0!important}
+  html.lite-mode #widget-chart .week-chart{gap:0;padding-left:0;padding-right:0}
+  html.lite-mode #widget-chart .bar-label{font-size:9px;white-space:nowrap}
+}
