@@ -1,4 +1,4 @@
-const CACHE = 'rivoli-v63';
+const CACHE = 'rivoli-v64';
 const ASSETS = ['./', './index.html', './Points.html', './Lite.html', './styles.css', './app.js', './sync-config.js', './sync-client.js', './manifest.webmanifest', './manifest-lite.webmanifest', './en-avant-logo.png', './pocket-watch.png', './campagne-de-france.jpg', './port-de-mer.jpg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting())));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));

@@ -811,3 +811,33 @@ html.lite-mode #widget-journal>.section-heading{display:none!important}
 .chart-card .bar-column{width:auto!important;max-width:none!important;min-width:0!important;height:100%;justify-self:stretch}
 .chart-card .bar-label{max-width:100%;overflow:hidden;text-overflow:clip}
 @media(max-width:480px){.chart-card .bar-label{font-size:8px!important;letter-spacing:0!important}}
+
+/* Rivoli Lite: focused four-widget view. */
+.lite-note-card{display:none!important}
+html.lite-mode #widget-agenda,html.lite-mode #widget-calendar,html.lite-mode #widget-rolodex,html.lite-mode #widget-routines,html.lite-mode #widget-accounting,html.lite-mode #widget-tasks,html.lite-mode #widget-graveyard,html.lite-mode #widget-history,html.lite-mode main>footer{display:none!important}
+html.lite-mode #widget-note{display:block!important;width:100%!important;min-height:0!important;padding:15px!important}
+html.lite-mode #widget-note .section-heading{margin-bottom:9px}
+html.lite-mode #widget-note .section-heading h2{font-size:16px}
+html.lite-mode .lite-note-form{display:grid;gap:8px}
+html.lite-mode .lite-note-form textarea{width:100%;min-height:72px;resize:vertical;border:1px solid #e5e9f1;border-radius:10px;padding:10px;background:#fff;color:var(--ink);font:inherit;font-size:13px}
+html.lite-mode .lite-note-form .primary-button{justify-self:end}
+html.lite-mode #widget-chart .week-chart{grid-template-columns:repeat(7,minmax(0,1fr))!important}
+html.lite-mode #widget-chart .chart-lines{left:0!important;width:100%!important}
+html.lite-mode #widget-chart .avg-30{display:none!important}
+html.lite-mode #widget-program .program-routine-actions,html.lite-mode #widget-program .program-wake-section{display:none!important}
+html.lite-mode #widget-program .program-section-heading{justify-content:space-between}
+html.lite-mode #widget-program .program-form{grid-template-columns:minmax(0,1fr) auto 36px}
+html.lite-mode #widget-program .program-list{max-height:390px;overflow:auto;overscroll-behavior:contain}
+html.lite-mode #widget-money .money-form,html.lite-mode #widget-money .money-hint{display:none!important}
+html.lite-mode #widget-money .lite-money-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+html.lite-mode .lite-money-actions{display:none}
+html.lite-mode .lite-money-button{min-height:48px;border:0;border-radius:12px;font:inherit;font-weight:750;font-size:14px;cursor:pointer}
+html.lite-mode .lite-money-button span{font-size:18px;margin-right:5px}
+html.lite-mode .lite-income{background:#e6f5ec;color:#238a5a}
+html.lite-mode .lite-expense{background:#fff0ef;color:#c64a4a}
+html.lite-mode .lite-money-dialog{width:min(420px,calc(100% - 28px));padding:25px}
+html.lite-mode .lite-money-dialog .edit-label input{width:100%;min-height:44px;border:1px solid #e5e9f1;border-radius:10px;padding:10px;background:#fff;font-size:15px;color:var(--ink)}
+html.lite-mode .lite-money-dialog .modal-actions .primary-button{min-width:110px}
+html.lite-mode main.custom-layout,html.lite-mode main.custom-layout.lite-custom-layout{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-auto-rows:10px!important;column-gap:12px!important;row-gap:12px!important;align-items:stretch!important;flex:none!important}
+html.lite-mode main.custom-layout .layout-widget{position:relative!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;overflow:hidden!important;flex:none!important}
+@media(max-width:800px){html.lite-mode main.custom-layout,html.lite-mode main.custom-layout.lite-custom-layout{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-auto-rows:10px!important;column-gap:12px!important;row-gap:12px!important}html.lite-mode main.custom-layout .layout-widget{width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important}html.lite-mode main.custom-layout #widget-chart{height:100%!important;min-height:0!important}}
