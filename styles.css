@@ -709,3 +709,61 @@ html.lite-mode main.custom-layout #widget-program{display:flex!important;flex-di
 html.lite-mode main.custom-layout #widget-program .program-list{flex:1;min-height:0;overflow:auto}
 html.lite-mode main.layout-editing .layout-widget{outline:1px dashed #315bd6;outline-offset:-3px;pointer-events:none}
 html.lite-mode main.layout-editing .layout-handle{pointer-events:auto}
+
+/* Desktop preview for the Lite edition: keep the phone layout visible and editable. */
+@media(min-width:721px){
+  html.lite-mode body{background:#e8ebf2;background-image:radial-gradient(ellipse at 50% 0%,#f9faff 0,#e8ebf2 66%);background-attachment:fixed}
+  html.lite-mode .app-shell{width:min(440px,calc(100vw - 40px));max-width:440px;min-height:calc(100vh - 40px);margin:20px auto;padding:0 14px 18px;background:#f5f6fa;border:1px solid #dfe3ec;border-radius:30px;box-shadow:0 22px 70px #1f2d4b24;overflow:hidden}
+  html.lite-mode .cover-banner{width:auto;max-width:none;height:132px;margin:0 -14px 12px;border-radius:0 0 20px 20px}
+  html.lite-mode .cover-banner .topbar{padding:0 15px}
+  html.lite-mode .cover-banner .topbar-actions{gap:7px}
+  html.lite-mode .cover-banner .icon-button{width:32px;height:32px}
+  html.lite-mode .today-points span{max-width:76px;white-space:normal;line-height:1.1}
+  html.lite-mode main{gap:12px}
+}
+html.lite-mode main .card,html.lite-mode .journal-program{border:1px solid #edf0f5;border-radius:17px;box-shadow:0 5px 18px #24325b0d}
+html.lite-mode #widget-chart{padding:14px 15px}
+html.lite-mode #widget-chart .battlefield-heading{font-size:16px;letter-spacing:-.35px}
+html.lite-mode #widget-chart .chart-toolbar{gap:7px;min-height:28px;flex-wrap:wrap}
+html.lite-mode #widget-chart .chart-range{font-size:9px}
+html.lite-mode #widget-chart .chart-averages{gap:7px}
+html.lite-mode #widget-chart .chart-averages span{font-size:8px}
+html.lite-mode #widget-chart .chart-averages strong{font-size:10px}
+html.lite-mode #widget-chart .chart-navigation .plain-button{width:22px;height:22px}
+html.lite-mode #widget-chart .week-chart{padding-left:0;padding-right:0;gap:3px}
+html.lite-mode #widget-chart .bar-label{font-size:8px}
+html.lite-mode .journal-program .program-form>input,html.lite-mode #widget-money .money-form input{min-height:40px;border:1px solid #e5e9f1;border-radius:10px;padding:9px 10px;background:#fff;font-size:13px}
+html.lite-mode #widget-money{padding:15px}
+html.lite-mode #widget-money .section-heading{margin-bottom:10px}
+html.lite-mode #widget-money .section-heading h2{font-size:16px}
+html.lite-mode #widget-money .money-mode-toggle{padding:3px;background:#f0f2f7;border-radius:12px}
+html.lite-mode #widget-money .money-mode-toggle button{min-height:36px;border-radius:9px}
+html.lite-mode #widget-money .money-hint{font-size:9px;color:#858b99}
+html.lite-mode #widget-calendar{padding:15px}
+html.lite-mode #widget-calendar .calendar-topline{gap:6px}
+html.lite-mode #widget-calendar .task-calendar{gap:5px}
+html.lite-mode .journal-program{padding:15px!important}
+html.lite-mode .journal-program .program-section-heading{height:auto;min-height:26px;margin-bottom:9px}
+html.lite-mode .journal-program .program-section-heading h2{font-size:16px;line-height:21px}
+html.lite-mode .journal-program .program-form{gap:7px}
+html.lite-mode .journal-program .program-list{max-height:390px}
+.topbar-tools{display:flex;align-items:center;gap:15px}
+@media(max-width:720px){
+  html.lite-mode .app-shell{max-width:none;padding:0 12px calc(14px + env(safe-area-inset-bottom));background:transparent}
+  html.lite-mode .cover-banner{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-radius:0 0 17px 17px}
+  html.lite-mode main{gap:10px}
+}
+/* Lite focuses on today's agenda and keeps the brand and score left aligned. */
+html.lite-mode .cover-banner .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-content:center;align-items:center;column-gap:8px;row-gap:2px;height:82px!important;padding:8px 14px!important}
+html.lite-mode .cover-banner .brand{grid-column:1;grid-row:1;justify-self:start;align-self:end}
+html.lite-mode .cover-banner .topbar-actions{display:contents}
+html.lite-mode .cover-banner .today-points{grid-column:1;grid-row:2;justify-self:start;align-self:start;gap:5px}
+html.lite-mode .cover-banner .today-points span{max-width:none;font-size:9px;white-space:nowrap;line-height:1.2}
+html.lite-mode .cover-banner .topbar-tools{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;justify-content:flex-end;gap:6px;align-self:center}
+html.lite-mode #widget-calendar{display:none!important}
+html.lite-mode #widget-agenda{display:flex!important;flex-direction:column;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;padding:14px!important;margin:0!important;overflow:hidden}
+html.lite-mode #widget-agenda .agenda-heading{margin-bottom:8px}
+html.lite-mode #widget-agenda .agenda-scroll{height:360px;min-height:360px;flex:none}
+html.lite-mode #widget-agenda .agenda-wake-line,html.lite-mode #widget-agenda #agenda-wake-summary{display:none!important}
+html.lite-mode .journal-program .program-wake-section{display:none!important}
+@media(max-width:720px){html.lite-mode .cover-banner .topbar{height:82px!important;padding:7px 12px!important}html.lite-mode #widget-agenda .agenda-scroll{height:340px;min-height:340px}}
