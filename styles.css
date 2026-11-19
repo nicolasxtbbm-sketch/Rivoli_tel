@@ -841,3 +841,12 @@ html.lite-mode .lite-money-dialog .modal-actions .primary-button{min-width:110px
 html.lite-mode main.custom-layout,html.lite-mode main.custom-layout.lite-custom-layout{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-auto-rows:10px!important;column-gap:12px!important;row-gap:12px!important;align-items:stretch!important;flex:none!important}
 html.lite-mode main.custom-layout .layout-widget{position:relative!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;overflow:hidden!important;flex:none!important}
 @media(max-width:800px){html.lite-mode main.custom-layout,html.lite-mode main.custom-layout.lite-custom-layout{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-auto-rows:10px!important;column-gap:12px!important;row-gap:12px!important}html.lite-mode main.custom-layout .layout-widget{width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important}html.lite-mode main.custom-layout #widget-chart{height:100%!important;min-height:0!important}}
+
+.auto-backup-panel{margin:14px 0;padding:13px;border:1px solid var(--line);border-radius:12px;background:#f8f9fc}
+.auto-backup-panel h3{margin:0 0 6px;font-size:12px;font-weight:750;letter-spacing:-.1px}
+.auto-backup-status{margin:0 0 8px;color:var(--muted);font-size:11px;line-height:1.45}
+.auto-backup-status[data-state="active"]{color:#26734b}
+.auto-backup-status[data-state="warning"],.auto-backup-status[data-state="error"]{color:#a14b42}
+.auto-backup-panel .import-button{width:100%;margin:0 0 8px}
+.auto-backup-panel small{display:block;color:var(--muted);font-size:10px;line-height:1.45}
+.auto-backup-panel button:disabled{opacity:.55;cursor:wait}
