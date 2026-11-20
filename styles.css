@@ -33,6 +33,49 @@ html,body{min-height:100%;overflow-x:hidden}body{background-color:#f4f5f8;backgr
 @media(max-width:720px){.cover-banner{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}#log-list{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:64px}.history-entry{grid-column:span 1}.routine-day-entry,.money-log{grid-column:span 2}}
 @media(max-width:430px){#log-list{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:62px}.history-entry{height:62px}.routine-day-entry,.money-log{grid-column:span 2}.task-log{grid-column:span 1}.task-log .row-title{font-size:8px;-webkit-line-clamp:4}}
 .no-routine-mark::before{display:none}
+/* Rolodex interaction tracking */
+.rolodex-heading-actions{display:flex;align-items:center;gap:8px}
+.contact-thanks-button{width:30px;height:30px;display:grid;place-items:center;border:1px solid #b9dfc9;border-radius:9px;background:#e9f7ef;color:#198754;font-size:16px;cursor:pointer}
+.contact-thanks-button:disabled{opacity:.38;cursor:not-allowed}
+.contact-tile.contact-overdue-orange{outline:2px solid #e8872f;outline-offset:2px}
+.contact-tile.contact-overdue-red{outline:2px solid #d64245;outline-offset:2px;box-shadow:0 0 0 4px #d642451c}
+.contact-tile.selected{box-shadow:0 0 0 2px #315bd6,0 0 0 5px #315bd626}
+.contact-popover{max-height:min(70vh,520px);overflow:auto}
+.contact-popover h4{margin:12px 0 5px;font-size:10px}
+.contact-interaction-history{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.contact-interaction-history li{display:grid;grid-template-columns:20px 68px minmax(0,1fr) auto;align-items:center;gap:4px;padding:5px 6px;border-radius:7px;background:#f6f8fc;font-size:9px}
+.interaction-history-icon{font-size:12px;text-align:center}.interaction-history-icon.call{color:#198754}.contact-interaction-history time{color:var(--muted);font-size:8px}.contact-interaction-history b{color:var(--blue-dark);font-size:8px;white-space:nowrap}
+.contact-history-empty{margin:0!important;color:var(--muted);font-size:9px!important}
+.contact-calendar{display:flex;flex-direction:column;flex:1;min-height:0;margin-top:7px;padding-top:6px;border-top:1px solid var(--line)}
+.contact-calendar-heading{display:grid;grid-template-columns:22px 1fr auto 22px;align-items:center;gap:4px;margin-bottom:4px}
+.contact-calendar-heading h3{margin:0;font-size:9px}.contact-calendar-heading strong{text-align:right;text-transform:capitalize;font-size:8px;color:var(--muted)}
+.contact-calendar-heading button{width:20px;height:20px;border:0;border-radius:6px;background:#f2f4fa;color:var(--blue-dark);font-size:15px;line-height:16px;cursor:pointer}.contact-calendar-heading button:disabled{opacity:.35;cursor:default}
+.contact-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));grid-auto-rows:minmax(20px,1fr);gap:2px;flex:1;min-height:0}
+.contact-calendar-weekday{text-align:center;color:var(--muted);font-size:7px;font-weight:700}
+.contact-calendar-cell{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;border-radius:5px;background:#fafbfe;padding:2px 1px;overflow:hidden}
+.contact-calendar-cell.outside{background:transparent}.contact-calendar-cell small{font-size:7px;line-height:9px;color:var(--muted)}.contact-calendar-cell.has-meeting{background:#eef4ff}.contact-calendar-cell.has-meeting small{color:var(--blue-dark);font-weight:800}
+.contact-calendar-avatars{display:flex;align-items:center;justify-content:center;min-width:0}.contact-calendar-avatars img,.contact-calendar-avatars i{width:11px;height:11px;margin-left:-2px;border:1px solid #fff;border-radius:50%;object-fit:cover;background:#315bd6;color:#fff;font-size:7px;font-style:normal;line-height:9px;text-align:center}.contact-calendar-avatars b{font-size:6px;color:var(--blue-dark)}
+.history-contact-photo{width:16px;height:16px;display:inline-grid;place-items:center;flex:none;overflow:hidden;border:1px solid #b8caef;border-radius:50%;background:#eaf0ff;color:#315bd6;font-size:8px;font-weight:700}
+.history-contact-photo img{width:100%;height:100%;object-fit:cover}.contact-point-pill{display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:6px;background:#f0f4ff;color:#315bd6;font-size:7px;white-space:nowrap}
+.contact-interaction-date-shortcuts{display:flex;gap:5px;overflow-x:auto;margin:0 0 13px;padding:2px 1px 5px;scrollbar-width:thin}
+.contact-interaction-date-shortcuts button{flex:none;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);padding:5px 8px;font-size:9px;cursor:pointer}
+.contact-interaction-date-shortcuts button.selected{border-color:#315bd6;background:#eef2ff;color:#315bd6;font-weight:700}
+.interaction-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0;padding:0;border:0}
+.interaction-types legend{margin-bottom:6px;font-size:10px;font-weight:700}
+.interaction-type{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;border:1px solid var(--line);border-radius:11px;background:#fff;padding:10px 5px;color:var(--ink);cursor:pointer}
+.interaction-type>span{font-size:22px;line-height:26px}.interaction-type .call-icon{color:#198754;font-size:24px}.interaction-type b{font-size:9px}.interaction-type small{font-size:8px;color:var(--muted)}.interaction-type.selected{border-color:#315bd6;background:#f0f4ff;box-shadow:0 0 0 2px #315bd61c}
+@media(max-width:720px){.chart-lower-row>.rolodex-card{display:flex;flex-direction:column;min-height:355px}.chart-lower-row>.rolodex-card .rolodex-list{flex:0 0 auto;max-height:75px;min-height:0;overflow:auto;align-content:flex-start}.chart-lower-row>.rolodex-card .contact-calendar{min-height:190px}.contact-interaction-history li{grid-template-columns:20px 65px minmax(0,1fr) auto}}
+/* Google Calendar day view and retrospective Journal entry */
+.google-calendar-card{display:flex;flex-direction:column;min-height:355px;overflow:hidden}
+.google-calendar-actions{display:flex;align-items:center;gap:8px;font-size:9px;color:var(--muted);white-space:nowrap}
+.google-calendar-actions .text-button{font-size:9px}
+.google-calendar-notice{margin:auto 0;color:var(--muted);font-size:11px;line-height:1.5}
+.google-calendar-view{flex:1;min-height:0;overflow:auto;border-radius:9px;background:#fbfcff}
+.google-calendar-view iframe{display:block;width:100%;height:100%;min-height:290px;border:0;background:#fff}
+.google-calendar-hint{margin:6px 0 0;color:var(--muted);font-size:8px;line-height:1.35}
+.journal-heading-actions{min-width:0}
+#journal-backfill-dialog textarea{width:100%;min-height:130px;resize:vertical}
+@media(max-width:720px){.google-calendar-card{height:430px!important;min-height:430px!important}.google-calendar-view iframe{min-height:350px}.google-calendar-actions{gap:5px}.google-calendar-actions .text-button{padding:4px;font-size:8px}.journal-heading-actions{gap:4px}.journal-heading-actions .text-button{font-size:8px}}
 
 /* Histogramme empilé et programme du jour */
 .top-dashboard-row{display:grid;grid-template-columns:2fr 1fr;gap:12px;align-items:stretch;margin-bottom:12px}
@@ -294,8 +337,20 @@ html,body{min-height:100%;overflow-x:hidden}body{background-color:#f4f5f8;backgr
 .journal-left-column{display:flex;flex-direction:column;justify-content:space-between;gap:12px;min-width:0}
 .journal-subheading{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .journal-card h3{font-size:11px;font-weight:700;margin:0}
-.journal-subheading>span{font-size:9px;color:var(--muted)}
+.journal-subheading>span,.journal-goal-heading-actions>span{font-size:9px;color:var(--muted)}
 .journal-goals{min-width:0}
+.journal-goal-heading-actions{display:flex;align-items:center;gap:7px}
+.journal-goal-history-button{width:22px;height:22px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:#f7f9ff;color:var(--blue-dark);font-size:15px;line-height:1;cursor:pointer}
+.journal-goal-history{display:grid;gap:10px;max-height:min(58vh,520px);overflow:auto;padding-right:3px}
+.journal-goal-history-week{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fbfcff}
+.journal-goal-history-week>header{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:6px;font-size:12px}
+.journal-goal-history-week>header b{color:var(--blue-dark);white-space:nowrap}
+.journal-goal-history-week ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.journal-goal-history-week li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:baseline;font-size:12px}
+.journal-goal-history-week li.done strong{color:#238a6b}
+.journal-goal-history-week li.pending{color:var(--muted)}
+.journal-goal-history-week li small{grid-column:1/-1;font-size:10px;color:var(--muted)}
+.journal-goal-history-bonus{margin:7px 0 0;padding-top:6px;border-top:1px solid var(--line);font-size:11px;font-weight:700;color:var(--blue-dark)}
 .journal-goal-list{list-style:none;padding:5px 0 0;margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:2px}
 .journal-goal{min-width:0;display:flex;align-items:center;gap:6px;padding:3px 0}
 .journal-goal label{display:flex;align-items:center;gap:7px;min-width:0;flex:1;font-size:10px}
@@ -850,3 +905,37 @@ html.lite-mode main.custom-layout .layout-widget{position:relative!important;wid
 .auto-backup-panel .import-button{width:100%;margin:0 0 8px}
 .auto-backup-panel small{display:block;color:var(--muted);font-size:10px;line-height:1.45}
 .auto-backup-panel button:disabled{opacity:.55;cursor:wait}
+
+/* Final Rolodex layout: contact strip plus its meeting calendar */
+.chart-lower-row>.rolodex-card{display:flex;flex-direction:column;height:355px;min-height:300px}
+.chart-lower-row>.rolodex-card .rolodex-list{flex:0 0 auto;max-height:72px;min-height:34px;overflow:auto;align-content:flex-start}
+.chart-lower-row>.rolodex-card .contact-calendar{flex:1;min-height:0;max-height:none}
+@media(max-width:720px){.chart-lower-row>.rolodex-card{height:355px!important;min-height:355px!important}.chart-lower-row>.rolodex-card .rolodex-list{flex:0 0 auto;max-height:72px;min-height:34px;overflow:auto}.chart-lower-row>.rolodex-card .contact-calendar{flex:1;min-height:0}}
+.wake-time-row{display:flex;align-items:flex-end;gap:6px}
+.wake-time-row .wake-time-control{flex:1;min-width:0}
+.wake-history-open{width:25px;height:25px;flex:none;margin-bottom:2px;border:1px solid var(--line);border-radius:7px;background:#f5f7fc;color:var(--blue-dark);font-size:17px;line-height:20px;cursor:pointer}
+.wake-history-list{display:grid;gap:9px;max-height:min(62vh,580px);overflow:auto;padding:2px}
+.wake-history-row{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(200px,1fr) auto;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fbfcff}
+.wake-history-date-fields{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.wake-history-row label{display:grid;gap:4px;color:var(--muted);font-size:9px;font-weight:650}
+.wake-history-row input[type=date],.wake-history-row input[type=time]{min-width:0;width:100%;padding:7px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:inherit;font-size:10px}
+.wake-history-slider{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wake-history-slider label{grid-template-columns:1fr auto}.wake-history-slider input{grid-column:1/-1;width:100%;accent-color:var(--blue)}.wake-history-slider output{color:var(--blue-dark);font-weight:700}
+.wake-history-row>.secondary-button{padding:7px 9px;font-size:9px;white-space:nowrap}
+#wake-history-dialog>.secondary-button{margin-top:12px}
+.journal-note-form textarea{max-height:none!important;min-height:35px;overflow-y:hidden;resize:none}
+.contact-popover{display:none}
+.contact-wrap:hover .contact-popover,.contact-wrap:focus-within .contact-popover{display:block}
+.contact-wrap.selected .contact-popover{display:block}
+.lite-money-actions{display:none!important}
+html.lite-mode #widget-money .lite-money-actions{display:grid!important;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:720px){.wake-history-row{grid-template-columns:1fr;gap:7px}.wake-history-row>.secondary-button{justify-self:end}.wake-history-date-fields{grid-template-columns:1.2fr .8fr}}
+
+/* Contact meetings are marked directly on the main month calendar. */
+.calendar-contact-photos{display:flex;align-items:center;gap:1px;min-width:0;margin-top:2px}
+.calendar-contact-photo{display:block;width:13px;height:13px;flex:none;border:1px solid #fff;border-radius:50%;object-fit:cover;background:#315bd6;color:#fff}
+.calendar-contact-initial{font-size:7px;font-style:normal;font-weight:700;line-height:11px;text-align:center}
+.calendar-contact-extra{font-size:6px;color:var(--blue-dark);line-height:1}
+.chart-lower-row>.rolodex-card .rolodex-list{flex:1 1 auto;max-height:none;min-height:0;overflow-y:auto;align-content:flex-start;overscroll-behavior:contain}
+@media(max-width:720px){.chart-lower-row>.rolodex-card .rolodex-list{flex:1 1 auto;max-height:none;min-height:0;overflow-y:auto}}
+#contact-open-conversation{white-space:nowrap}
+@media(max-width:430px){#contact-interaction-dialog .modal-actions{gap:5px}#contact-interaction-dialog .modal-actions button{padding:8px 9px;font-size:10px}}
